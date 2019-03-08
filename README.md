@@ -187,3 +187,11 @@ Another plugin: this one does charts. You can install it with `pip install datas
 Example: [avail_seat_km_per_week for different airlines](https://fivethirtyeight.datasettes.com/fivethirtyeight-b76415d/airline-safety%2Fairline-safety#g.mark=bar&g.x_column=airline&g.x_type=ordinal&g.y_column=avail_seat_km_per_week&g.y_type=quantitative) from FiveThirtyEight's airline safety data.
 
 This illustrates a pattern where a plugin can persist its settings in the `#fragment` section of the URL. This means it's possible to bookmark graphs based on the options that were fed into the plugin.
+
+## Bonus exercise: sqlite-utils
+
+Not every interesting dataset is published as CSV.
+
+`sqlite-utils` is a Python library and command-line tool aimed at making it as easy as possible to create SQLite databases from JSON or other data sources.
+
+[sqlite-utils: a Python library and CLI tool for building SQLite databases](https://simonwillison.net/2019/Feb/25/sqlite-utils/) is a tutorial on how to use it.
