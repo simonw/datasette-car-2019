@@ -10,7 +10,7 @@ _NICAR 2019 workshop, 8th March 2019_
 Two of my projects:
 
 * [Exploring the UK Register of Members Interests with SQL and Datasette](https://simonwillison.net/2018/Apr/25/register-members-interests/) - resulting in https://register-of-members-interests.datasettes.com/
-* [Analyzing US Election Russian Facebook Ads](https://russian-ira-facebook-ads.datasettes.com/) - resulting in https://russian-ira-facebook-ads.datasettes.com/
+* [Analyzing US Election Russian Facebook Ads](https://simonwillison.net/2018/Aug/6/russian-facebook-ads/) - resulting in https://russian-ira-facebook-ads.datasettes.com/
 
 Two projects by other people:
 
