@@ -19,19 +19,16 @@ Two projects by other people:
 
 ## Getting started
 
-The first step is to "activate our virtual environment". The computers we are using have already been set up with the software we need, but we need to activate a terminal so we can use it.
+First we need to install some software. Assuming you have a working Python 3 environment I recommend using pipenv:
 
-Run the following:
+    $ pip3 install pipenv
+    $ mkdir car-2019-datasette
+    $ cd car-2019-datasette
+    $ pipenv shell
 
-    cd Desktop/hands_on_classes/explore_and_publish_your_data_with_datasette_1664
+`pipenv shell` creates and activates a new Python virtual environment for that directory. We can install software in that environment like so:
 
-Now type:
-
-    pipenv shell
-
-Your terminal prompt should now look like this:
-
-    (explore_and_publish_your_data_with_datasette_1664) bash-3.2 $ 
+    $ pip install datasette csvs-to-sqlite
 
 To confirm that the correct software is installed, run these commands:
 
@@ -124,7 +121,7 @@ This will publish your database and return a new URL where you can browse it onl
 
 ## California Civic Data
 
-https://www.californiacivicdata.org/ offers CSV downloads of the latest California campaign finance data. You don't need to download this: it's already available as `flat.zip` (but if you need it you can download it using `curl -O https://calaccess.download/latest/flat.zip`)
+https://www.californiacivicdata.org/ offers CSV downloads of the latest California campaign finance data. You can download it from https://calaccess.download/latest/flat.zip
 
     $ unzip flat.zip
     $ ls
@@ -150,9 +147,13 @@ This data is a really good fit for Datasette's faceting feature. Try these:
 
 ### Geographic data
 
-You should have a file called `City_Facilities.csv`. This is a CSV file of facilities managed by the city of San Francisco, downloaded from the San Francisco open data portal at https://data.sfgov.org/City-Infrastructure/City-Facilities/nc68-ngbr
+There is a CSV file of facilities managed by the city of San Francisco, available from the San Francisco open data portal at https://data.sfgov.org/City-Infrastructure/City-Facilities/nc68-ngbr
 
-We can use this data to demonstrate Datasette's plugins functionality. The plugin we are going to use is called `datasette-cluster-map`, and it should already have been installed. You can see what plugins are installed using the `datasette plugins` command:
+We can use this data to demonstrate Datasette's plugins functionality. The plugin we are going to use is called `datasette-cluster-map`. You can install ot like this:
+
+    $ pip install datasette-cluster-map
+
+You can see what plugins are installed using the `datasette plugins` command:
 
     $ datasette plugins
     [
@@ -163,10 +164,6 @@ We can use this data to demonstrate Datasette's plugins functionality. The plugi
             "version": "0.5"
         }
     ]
-
-If the plugin is not installed, you can install it using `pip`:
-
-    pip install datasette-cluster-map
 
 This plugin scans the current table for `latitude` and `longitude` columns and, if found, renders the data on a clustered marker map.
 
